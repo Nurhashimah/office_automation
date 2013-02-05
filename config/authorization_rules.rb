@@ -128,6 +128,7 @@ authorization do
   #126-127-4Feb2013-new role created
   role :service_support do
     has_permission_on :addbooks, :to => :manage
+    has_permission_on [:users, :roles],  :to => :manage #stuff in admin menu-5Feb2013
   end
   
   role :finance_unit do
