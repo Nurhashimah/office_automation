@@ -39,6 +39,7 @@ authorization do
     
     #Administration Menu Items
     has_permission_on [:users, :roles, :pages],  :to => :manage #stuff in admin menu
+    
   end
   
   
@@ -115,6 +116,8 @@ authorization do
     has_permission_on :librarytransactions, :to => :read do
       if_attribute :staff_id => is {User.current_user.staff_id}
     end
+    
+    has_permission_on :bulletins, :to => :manage  #5Feb2013
   end
   
   role :staff_administrator do
