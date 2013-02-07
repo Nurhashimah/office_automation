@@ -118,6 +118,8 @@ authorization do
     end
     
     has_permission_on :bulletins, :to => :manage  #5Feb2013
+    #7Feb2013-all staff should have this access
+    has_permission_on :addbooks, :to => :manage
   end
   
   role :staff_administrator do
@@ -127,8 +129,10 @@ authorization do
   
   #126-127-4Feb2013-new role created
   role :service_support do
-    has_permission_on :addbooks, :to => :manage
+    #has_permission_on :addbooks, :to => :manage
     has_permission_on [:users, :roles],  :to => :manage #stuff in admin menu-5Feb2013
+    #7Feb2013-require this authority to MANAGE:(1)staff info & (2) task & responsibilities
+    has_permission_on :staffs, :to => :manage
   end
   
   role :finance_unit do
