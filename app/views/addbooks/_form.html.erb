@@ -16,9 +16,26 @@
 			</tr>
 			<tr>
 				<td class="leftcol"><label for="address">Address</label></td>
-				<td><%= f.text_field :address %></td>
+				<td>
+					<!--7Feb2013-->
+					<% unless @addbook.id.blank? %>
+						<% rest, *last = @addbook.address.split("//")%>
+					<% else %>
+						<% rest = @address %>
+						<% last = @postcode %>
+					<% end %>
+					<%= f.text_area :address, :rows => 6, :cols => 29, :value => rest %>
+					<!--7Feb2013-->
+				</td>
 			</tr>
-	
+			<!--7Feb2013-->
+			<tr>
+				<td class="leftcol"><label for="mail">Postcode</label></td>
+				<td>
+					<%= f.text_field :postcode, :value => last %>
+				</td>
+			</tr>
+			<!--7Feb2013-->
 			<tr>
 				<td class="leftcol"><label for="mail">E-Mail</label></td>
 				<td><%= f.text_field :mail %></td>

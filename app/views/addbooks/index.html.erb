@@ -38,7 +38,13 @@
     <td><%=h addbook.name %></td>
     <td><%=h addbook.phone %></td>
     <td><%=h addbook.fax %></td>
-    <td><%=h addbook.address %></td>
+    <td><%#=h addbook.address %>
+		<% rest, *last = addbook.address.split("//")%>
+		<%=h rest %>
+		<% unless last.blank? || last.nil? %>
+			 <br>Postcode : <%=h last%>
+		<% end %>
+	</td>
     <td><%=h addbook.mail %></td>
     <td><%=h addbook.web %></td>
 

@@ -9,9 +9,21 @@
 
 					<tr>
 						<td class="leftcol"><label for="address"><b>Address:</b></label></td>
-						<td><%=h @addbook.address %></td>
+						<td>
+							<!--7Feb2013-->
+							<% rest, *last = @addbook.address.split("//")%>
+							<%=h rest%>
+							<%#=h @addbook.address %>
+							<!--7Feb2013-->
+						</td>
 					</tr>
-
+					<!--7Feb2013-->
+					<tr>
+						<td class="leftcol"><label for="mail">Postcode</label></td>
+						<td><%=h last%><%#=h @addbook.address.split(" ").last %></td>
+					</tr>
+					<!--7Feb2013-->
+					<tr>
 					<tr>
 						<td class="leftcol"><label for="mail"><b>Email:</b></label></td>
 						<td> <%=h @addbook.mail %></td>
