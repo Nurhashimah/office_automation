@@ -713,6 +713,7 @@ en:
       
   cofile:
      new: New File
+     create: New File
      edit: Editing File
      list: File List
      cofileno: File No

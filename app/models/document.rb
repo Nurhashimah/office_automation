@@ -18,6 +18,10 @@ before_save :set_actionstaff2_to_blank_if_close_is_selected
   def set_actionstaff2_to_blank_if_close_is_selected
     if cc1closed == true
       self.cc2staff_id = nil
+      self.closed = true #7Feb2013-set close when cc1closed == true
+    end
+    if cc2closed == true
+      self.closed = true #7Feb2013-set close when cc2closed == true
     end
   end
 

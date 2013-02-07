@@ -47,7 +47,10 @@ authorization do
   
   role :staff do
     has_permission_on :authorization_rules, :to => :read
-    has_permission_on [:attendances, :assets, :documents],     :to => :menu              # Access for Menus
+    #7Feb2013
+    #has_permission_on [:attendances, :assets, :documents],     :to => :menu              # Access for Menus
+    has_permission_on [:attendances, :assets],     :to => :menu 
+    #7Feb2013
     has_permission_on :books, :to => :core
     has_permission_on :ptdos, :to => :create
     has_permission_on :ptdos, :to => :index do
@@ -120,6 +123,7 @@ authorization do
     has_permission_on :bulletins, :to => :manage  #5Feb2013
     #7Feb2013-all staff should have this access
     has_permission_on :addbooks, :to => :manage
+    has_permission_on :cofiles, :to => :manage  #filing
   end
   
   role :staff_administrator do
@@ -133,6 +137,8 @@ authorization do
     has_permission_on [:users, :roles],  :to => :manage #stuff in admin menu-5Feb2013
     #7Feb2013-require this authority to MANAGE:(1)staff info & (2) task & responsibilities
     has_permission_on :staffs, :to => :manage
+    #7Feb2013-surat masuk
+    #has_permission_on :documents, :to => [:create, :update, :menu] 
   end
   
   role :finance_unit do
@@ -170,7 +176,7 @@ authorization do
   
   #Group E-Filing ------------------------------------------------------------------------------- 
   role :e_filing do
-    has_permission_on :cofiles, :to => :manage
+    #has_permission_on :cofiles, :to => :manage 7Feb2013 -->all staff have access
     has_permission_on :documents, :to => :manage
   end
   
