@@ -1,18 +1,29 @@
 
   <table width=100% >
 			<tr>
-				<td class="leftcol"><label for="name">Name</label></td>
+				<td class="leftcol"><label for="name">Company Name</label></td>
 				<td><%= f.text_field :name %></td>
 			</tr>
-	
+			<tr>
+				<td class="leftcol"><label for="name">Contact Person</label></td>
+				<td>
+					<%= f.text_field :contact_person %>
+					<i><font color=#AAA size=-2 style=italic> (Eg: Encik Halim, Cik Sharifah(PA))</font></i>
+				</td>
+			</tr>
 			<tr>
 				<td class="leftcol"><label for="phone">Phone No</label></td>
-				<td><%= f.text_field :phone %></td>
+				<td>
+					<%= f.text_field :phone %>
+					<i><font color=#AAA size=-2> (Eg: 03-89898989(DL), 03-8888888(FL)ext 273, 012-753555(HP), 013-12121212(HP-PA))</font></i>
+				</td>
 			</tr>
 	
 			<tr>
 				<td class="leftcol"><label for="fax">Fax</label></td>
-					<td><%= f.text_field :fax %></td>
+				<td>
+					<%= f.text_field :fax %><i><font color=#AAA size=-2> (Eg: 03-87139741, 03-819721794)</font></i>
+				</td>
 			</tr>
 			<tr>
 				<td class="leftcol"><label for="address">Address</label></td>
