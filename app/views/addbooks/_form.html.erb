@@ -2,12 +2,12 @@
   <table width=100% >
 			<tr>
 				<td class="leftcol"><label for="name">Company Name</label></td>
-				<td><%= f.text_field :name %></td>
+				<td><%= f.text_area :name, :rows => 1, :cols => 59%></td>
 			</tr>
 			<tr>
 				<td class="leftcol"><label for="name">Contact Person</label></td>
 				<td>
-					<%= f.text_field :contact_person %>
+					<%= f.text_area :contact_person, :rows => 1, :cols => 59 %>
 					<i><font color=#AAA size=-2 style=italic> (Eg: Encik Halim, Cik Sharifah(PA))</font></i>
 				</td>
 			</tr>
@@ -62,7 +62,7 @@
 						<% rest = @address %>
 						<% last = @postcode %>
 					<% end %>
-					<%= f.text_area :address, :rows => 6, :cols => 29, :value => rest %>
+					<%= f.text_area :address, :rows => 4, :cols => 59, :value => rest %>
 					<!--7Feb2013-->
 				</td>
 			</tr>
