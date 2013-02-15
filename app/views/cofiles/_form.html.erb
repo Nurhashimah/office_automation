@@ -20,7 +20,7 @@
 	
 	<tr>
 		<td class="leftcol"><label for="owner_id"><b><%= t 'cofile.owner' %> :</b></label><font color="red"> * </font></td>
-	<td><%= f.collection_select :owner_id, Staff.find(:all), :id, :mykad_with_staff_name, :include_blank => true %></td>
+	<td><%= f.collection_select :owner_id, Staff.find(:all), :id, :name, :include_blank => true %><%#= f.collection_select :owner_id, Staff.find(:all), :id, :mykad_with_staff_name, :include_blank => true %></td>
 	</tr>
 	<script type="text/javascript">
 	  function switchvisibility(el) {

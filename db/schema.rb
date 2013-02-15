@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130208033325) do
+ActiveRecord::Schema.define(:version => 20130215072929) do
 
   create_table "accessions", :force => true do |t|
     t.integer  "book_id"
@@ -834,6 +834,14 @@ ActiveRecord::Schema.define(:version => 20130208033325) do
     t.decimal  "minquantity"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "phones", :force => true do |t|
+    t.string   "phone_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "addbook_id"
+    t.string   "phone_type"
   end
 
   create_table "positions", :force => true do |t|

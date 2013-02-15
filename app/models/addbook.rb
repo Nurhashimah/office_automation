@@ -5,6 +5,10 @@ class Addbook < ActiveRecord::Base
   has_many :ptcourses,                            :foreign_key => 'provider_id'
   has_many :maintainers,  :class_name => 'Maint', :foreign_key => 'maintainer_id'
   
+  #15Feb2013-subform for addbook 
+  has_many :phones, :foreign_key => 'addbook_id', :dependent => :destroy
+  accepts_nested_attributes_for :phones, :allow_destroy => true, :reject_if => lambda { |a| a[:phone_no].blank? }
+  
   # start of-----7Feb2013 - add-in postcode
   attr_accessor :postcode
   
