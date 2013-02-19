@@ -718,7 +718,10 @@ en:
      list: File List
      cofileno: File No
      name: File Name
+     company: Company
+     remark: Remark
      location: Location
+     division: Division
      owner: Owner
      onloan: On Loan
      onloan_to: On Loan To

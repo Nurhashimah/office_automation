@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130215072929) do
+ActiveRecord::Schema.define(:version => 20130219083537) do
 
   create_table "accessions", :force => true do |t|
     t.integer  "book_id"
@@ -464,6 +464,9 @@ ActiveRecord::Schema.define(:version => 20130215072929) do
     t.date     "onloanxdt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "company"
+    t.string   "remark"
+    t.integer  "division"
   end
 
   create_table "counsellings", :force => true do |t|

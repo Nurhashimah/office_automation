@@ -587,14 +587,18 @@ legend {
 /* 
 	LEVEL ONE
 */
-
+#fff9e1
 
 
 .yellow td 	{background-color: #0FF; }
 .purple td 	{background-color: #FEE; }
-.green td, .green 	{background-color: #EFE; }
+.green td, .green 	{background-color: #EFE; }	/
 .red td, .red 	    {background-color: #FEE; }
 .blue td, .blue 	{background-color: #EEF; }
+.pink td {background-color: #FCB6E1}			/*19Feb2013-for use in cofiles DIVISION colouring*/
+.yellow2 td {background-color: #FCFC90; }		/*19Feb2013-for use in cofiles DIVISION colouring*/
+.green2 td {background-color: #D6F7B6;}			/*19Feb2013-for use in cofiles DIVISION colouring*/
+.orange td {background-color: #FD9679;}			/*19Feb2013-for use in cofiles DIVISION colouring*/
 
  {background-color: #EFE; }
 
