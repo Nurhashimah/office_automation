@@ -409,6 +409,15 @@ input.numero {text-align:right}
 	padding:4px 3px 7px 5px;
 	font-size: 11px; 
 }
+.tlist .title {
+	font-size:12px;
+	font-weight:bold;
+	background:#ffffff;
+}
+.tlist .blank {
+	border-bottom:none;
+	background:#ffffff;
+}
 .tlist tr:hover td{ 
 	background:#fff9e1; 
 }

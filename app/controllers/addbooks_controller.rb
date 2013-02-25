@@ -16,15 +16,15 @@ class AddbooksController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @addbooks }
-       #----start of----PDF creation of examquestions-15 May 2012 --------------------
+       #----start of----PDF creation of cofiles-25 Feb 2012 --------------------
         #--1) set -> mime-type : initializer/mimes_types.rb
-        #--2) include -> require 'pdf/writer', require 'pdf/simpletable' : lib/examquestion_drawer.rb
-        #--3) include -> link for pdf format : view/examquestions/index.html.erb
+        #--2) include -> require 'pdf/writer', require 'pdf/simpletable' : lib/addbook_drawer.rb
+        #--3) include -> link for pdf format : view/cofiles/index.html.erb
         #--4) include format.pdf block as below...
         format.pdf do
    			  send_data AddbookDrawer.draw(@listadd),:filename => 'addbook.pdf', :type=>'application/pdf',:disposition=>'inline'
    		  end
-   		  #----end of----PDF creation of examquestions-15 May 2012 ----------------------
+   		  #----end of----PDF creation of cofiles-25 Feb 2012 ----------------------
     end
   end
 

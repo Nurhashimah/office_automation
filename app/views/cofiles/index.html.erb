@@ -19,6 +19,7 @@
 <table width=100%>
 <tr>
     <th><%= t 'cofile.cofileno' %></th>
+	<th><%= t 'cofile.cofile_code' %></th><!--25Feb2013-->
 	<th><%= t 'cofile.company' %></th>
     <th><%= t 'cofile.name' %></th>
     <th><%= t 'cofile.location' %></th>
@@ -32,16 +33,14 @@
 <% @cofiles.each do |cofile| %>
  <!--<tr>--><!--16Feb2013-set row color according to file owner--><tr class="<%= (cofile.set_row_color) %>">
     <td><%=h cofile.cofileno %></td>
-	<td>
-		<!--16Feb2013-add-in this part for company name display in index page--><%#=h cofile.company %>
-		<% unless cofile.company.nil? || cofile.company.blank?%>
-			<%= Addbook.find(cofile.company.to_i).name %>
-		<% end %>
-		<!--16Feb2013-add-in this part for company name display in index page-->
+	<td><%=h cofile.cofile_code %></td><!--25Feb2013-->
+	<td><!--16Feb2013-add-in this part for company name display in index page--><!--22Feb2013-amended-->
+		<%= cofile.company? ? Addbook.find(cofile.company.to_i).name : "-" %>
 	</td>
     <td><%=h cofile.name %></td>
-    <td><!--15Feb2013-display location using coded list-->
-		<%=h (Cofile::LOCATION.find_all{|disp, value| value == cofile.location.to_i}).map {|disp, value| disp} %></td>
+    <td><!--15Feb2013-display location using coded list--><!--22Feb2013-amended-->
+		<%= cofile.location? ? (Cofile::LOCATION.find_all{|disp, value| value == cofile.location.to_i}).map {|disp, value| disp} : "-" %>
+	</td>
     <td><%=h cofile.owner_details %></td>
     <td><%=h cofile.staffloan_id? ? cofile.borrower_details : "" %></td>
 	<td><%=h cofile.onloan? ? cofile.onloandt : "" %></td>
@@ -55,4 +54,6 @@
 <br />
 </div>
 
-<%= link_to (t 'cofile.create'), new_cofile_path %>
+<%= link_to (t 'cofile.create'), new_cofile_path %> | 
+<!--17Feb2013-import data from excel file-->
+<%= link_to t('cofile.import_data_from_excel'), {:controller => 'cofiles', :action => 'import_cofile_from_excel'} %>

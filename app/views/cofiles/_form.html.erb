@@ -1,10 +1,10 @@
-<div class="tform">
+<!--<div class="tform">-->
 	<H2>Files Details</H2>
-  <table width=100% >	
+ <!-- <table width=100% >	-->
 			
 			<tr>
-				<td class="leftcol"><label for="cofileno"><b><%= t 'cofile.cofileno' %> :</b></label><font color="red"> * </font></td>
-				<td><!--15feb2013-hide KSKBJB numbering-()KSKBJB/--><%= f.text_field :cofileno %></td>
+				<td class="leftcol"><label for="cofileno"><b><%= t 'cofile.cofileno' %> :</b></label></td>
+				<td><%= f.text_field :cofileno %></td>
 			</tr>
 				
 			<tr>
@@ -28,7 +28,7 @@
 			</tr>
 			<!--19 Feb2013-add-in company name-->
 			<tr>
-				<td class="leftcol"><label for="location"><b><%= t 'cofile.location' %> :</b></label><font color="red"> * </font></td>
+				<td class="leftcol"><label for="location"><b><%= t 'cofile.location' %> :</b></label><!--<font color="red"> * </font>--></td>
 				<td>
 					<!--15Feb2013-use of location-coded list-->
 					<!--ref:http://stackoverflow.com/questions/623458/rails-select-helper-default-selected-value-how-->
@@ -54,7 +54,7 @@
 			</tr>
 			<!--19 Feb2013-add-in division-file colors-->
 	<tr>
-		<td class="leftcol"><label for="owner_id"><b><%= t 'cofile.owner' %> :</b></label><font color="red"> * </font></td>
+		<td class="leftcol"><label for="owner_id"><b><%= t 'cofile.owner' %> :</b></label><!--<font color="red"> * </font>--></td>
 	<td><!--15Feb2013 display name only--><%= f.collection_select :owner_id, Staff.find(:all), :id, :name, :prompt => "Please select", :include_blank => true %><%#= f.collection_select :owner_id, Staff.find(:all), :id, :mykad_with_staff_name, :include_blank => true %></td>
 	</tr>
 	<!--15Feb2013-add-in remark-->
@@ -118,5 +118,5 @@
 		<!--additional on 19Feb2013-->
 	<% end %><!--19Feb2013-this line added for viewing of SELECTED onloan details in EDIT page-->
 	
-</table>
+<!--</table>-->
 <BR>
