@@ -5,6 +5,13 @@
 		<th colspan = 2><%= t 'cofile.file_details' %></th>
 	</tr>
 	
+	<!--26Feb2013-international numbering added-->
+	<tr>
+		<td class="leftcol"><label for="cofileno"><b><%= t 'cofile.international_code' %> :</b></label></td>
+		<td><%=h @cofile.cofile_code %></td>
+	</tr>
+	<!--26Feb2013-international numbering added-->
+	
 	<tr>
 		<td class="leftcol"><label for="cofileno"><b><%= t 'cofile.cofileno' %> :</b></label></td>
 		<td><%=h @cofile.cofileno %></td>

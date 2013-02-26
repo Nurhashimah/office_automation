@@ -26,7 +26,11 @@ class Cofile < ActiveRecord::Base
 
 
   def file_no_and_name
-    "#{cofileno}  #{name}"
+    if cofile_code.nil? 
+       "#{cofileno} | #{name}"                  #26Feb2013-International code added
+    else
+      "#{cofileno} | #{name} | #{cofile_code}"  #26Feb2013-International code added
+    end
   end
   
   
