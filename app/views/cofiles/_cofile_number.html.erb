@@ -6,7 +6,10 @@
 		<% unless @cofile.cofile_code.nil? && @cofile.classification.nil? %>
 			<%#= @cofile.cofile_code %><%#= @cofile.classification %>
 				
-				<% if (@cofile.classification.to_s  =~ /1(.*)/ )%>
+				<%# if (@cofile.classification.to_s  =~ /1(.*)/ )%><!--revised 26Feb2013-->
+				<% if (@cofile.classification==101||@cofile.classification==102||@cofile.classification==103||@cofile.classification==104||
+					@cofile.classification==105||@cofile.classification==106||@cofile.classification==107||@cofile.classification==108||
+					@cofile.classification==109||@cofile.classification==110||@cofile.classification==111||@cofile.classification==112 ) %>
 					<% @mainclass=1 %>
 					<% @subclass1_div='block' %>
 					<% @subclass2_div='none' %>
@@ -16,7 +19,12 @@
 					<% @subclass6_div='none' %>
 					<% @subclass8_div='none' %>
 					<% @subclass9_div='none' %>
-				<% elsif (@cofile.classification.to_s  =~ /2(.*)/ ) %>
+				<%# elsif (@cofile.classification.to_s  =~ /2(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==201||@cofile.classification==202||@cofile.classification==203||@cofile.classification==204||
+					@cofile.classification==205||@cofile.classification==206||@cofile.classification==207||@cofile.classification==208||
+					@cofile.classification==209||@cofile.classification==210||@cofile.classification==211||@cofile.classification==212||
+					@cofile.classification==213||@cofile.classification==214||@cofile.classification==215||@cofile.classification==216||
+					@cofile.classification==217||@cofile.classification==218||@cofile.classification==219||@cofile.classification==220 ) %>
 					<% @mainclass=2 %>
 					<% @subclass2_div='block' %>
 					<% @subclass1_div='none' %>
@@ -26,7 +34,8 @@
 					<% @subclass6_div='none' %>
 					<% @subclass8_div='none' %>
 					<% @subclass9_div='none' %>
-				<% elsif (@cofile.classification.to_s  =~ /3(.*)/ ) %>
+				<%# elsif (@cofile.classification.to_s  =~ /3(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==301||@cofile.classification==305||@cofile.classification==306 ) %>
 					<% @mainclass=3 %>
 					<% @subclass3_div='block' %>
 					<% @subclass1_div='none' %>
@@ -36,7 +45,14 @@
 					<% @subclass6_div='none' %>
 					<% @subclass8_div='none' %>
 					<% @subclass9_div='none' %>
-				<% elsif (@cofile.classification.to_s  =~ /4(.*)/ ) %>
+				<%# elsif (@cofile.classification.to_s  =~ /4(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==401||@cofile.classification==402||@cofile.classification==403||@cofile.classification==404||
+					@cofile.classification==405||@cofile.classification==406||@cofile.classification==407||@cofile.classification==408||
+					@cofile.classification==409||@cofile.classification==410||@cofile.classification==411||@cofile.classification==420||
+					@cofile.classification==421||@cofile.classification==422||@cofile.classification==423||@cofile.classification==430||
+					@cofile.classification==431||@cofile.classification==440||@cofile.classification==441||@cofile.classification==442|| 
+					@cofile.classification==443||@cofile.classification==450||@cofile.classification==451||@cofile.classification==452||
+					@cofile.classification==499) %>
 					<%@mainclass=4 %>
 					<% @subclass4_div='block' %>
 					<% @subclass1_div='none' %>
@@ -46,7 +62,9 @@
 					<% @subclass6_div='none' %>
 					<% @subclass8_div='none' %>
 					<% @subclass9_div='none' %>
-				<% elsif (@cofile.classification.to_s  =~ /5(.*)/ ) %>
+				<%# elsif (@cofile.classification.to_s  =~ /5(.*)/ ) %><!--revised 26Feb2013-->
+				<% elsif (@cofile.classification==501||@cofile.classification==502||@cofile.classification==503||@cofile.classification==516||
+					@cofile.classification==520||@cofile.classification==521||@cofile.classification==522||@cofile.classification==550 )%>
 					<% @mainclass=5 %>
 					<% @subclass5_div='block' %>
 					<% @subclass1_div='none' %>
@@ -56,17 +74,19 @@
 					<% @subclass6_div='none' %>
 					<% @subclass8_div='none' %>
 					<% @subclass9_div='none' %>
-				<% elsif (@cofile.classification.to_s  =~ /6(.*)/ ) %>
+				<%# elsif (@cofile.classification.to_s  =~ /6(.*)/ ) %>
+				<% elsif @cofile.classification == 6 %><!--revised 26Feb2013-->
 					<% @mainclass=6 %>
 					<%# @subclass6_div='block' %>
 					<% @subclass1_div='none' %>
 					<% @subclass2_div='none' %>
 					<% @subclass3_div='none' %>
 					<% @subclass4_div='none' %>
-					<% @subclass6_div='none' %>
+					<% @subclass5_div='none' %>
 					<% @subclass8_div='none' %>
 					<% @subclass9_div='none' %>
-				<% elsif (@cofile.classification.to_s  =~ /8(.*)/ )  %>
+				<%# elsif (@cofile.classification.to_s  =~ /8(.*)/ )  %>
+				<% elsif @cofile.classification == 8 %><!--revised 26Feb2013-->
 					<% @mainclass=8 %>
 					<%# @subclass8_div='block' %>
 					<% @subclass1_div='none' %>
@@ -76,9 +96,10 @@
 					<% @subclass6_div='none' %>
 					<% @subclass4_div='none' %>
 					<% @subclass9_div='none' %>
-				<% elsif (@cofile.classification.to_s  =~ /9(.*)/ ) %>
+				<%# elsif (@cofile.classification.to_s  =~ /9(.*)/ ) %>
+				<% elsif @cofile.classification == 9 %><!--revised 26Feb2013-->
 					<% @mainclass=9 %>
-					<% @subclass9_div='block' %>
+					<%# @subclass9_div='block' %><!--26Feb2013-amended-->
 					<% @subclass1_div='none' %>
 					<% @subclass2_div='none' %>
 					<% @subclass3_div='none' %>
@@ -89,18 +110,18 @@
 				<% end %>
 				
 				<!--have to include this to OVERIDE value of @mainclass=1 when classification == 201-->
-				<% if @cofile.classification == 201 || @cofile.classification == '201' %>
-					<% @mainclass=2 %>
-					<% @subclass2_div='block' %>
-					<% @subclass1_div='none' %>
-					<% @subclass3_div='none' %>
-					<% @subclass4_div='none' %>
-					<% @subclass5_div='none' %>
-					<% @subclass6_div='none' %>
-					<% @subclass8_div='none' %>
-					<% @subclass9_div='none' %>
-					<%#= @mainclass %> <!--OR VALUE OF @MAINCLASS STUCK AT 1-->
-				<% end %>
+				<%# if @cofile.classification == 201 || @cofile.classification == '201' %>
+					<%# @mainclass=2 %>
+					<%# @subclass2_div='block' %>
+					<%# @subclass1_div='none' %>
+					<%# @subclass3_div='none' %>
+					<%# @subclass4_div='none' %>
+					<%# @subclass5_div='none' %>
+					<%# @subclass6_div='none' %>
+					<%# @subclass8_div='none' %>
+					<%# @subclass9_div='none' %>
+					<%##= @mainclass %> <!--OR VALUE OF @MAINCLASS STUCK AT 1-->
+				<%# end %>
 				<!--have to include this to OVERIDE value of @mainclass=1 when classification == 201-->
 				
 		<% else %>
@@ -113,148 +134,100 @@
 		<%#= f.select :main_class, Cofile::MAIN_CLASSIFICATION,  :selected=>@mainclass.to_i, :prompt => "Please select"%>
 		
 		<%#---------------------------------PROJECT---------------------------------------%>
-		<SPAN class="project", style="display: <%=@subclass1_div%>;">
-			<% if (@cofile.classification.to_s  =~ /1(.*)/ ) %>
-				<%= f.select :sub_class, Cofile::PROJECT_MGMT, :selected=>@cofile.classification.to_i, :include_blank => true %>
-			<% else %>
-				<%= f.select :sub_class, Cofile::PROJECT_MGMT, :prompt => "Please select" %>
-			<% end %>
-		</span>
-		
-		<% aa = []%>
-		<% Cofile::PROJECT_MGMT.each do |l, k| %>
-			<% aa << k%>
-		<% end %>			
-		<% 1.upto(12) do |count|%>
-			<SPAN class="subproject<%=count%>", style="display: none;">
-				<% counter = count-1%>
-				<% classnum = aa[counter] %>
-			
-<!---->
-				<% if Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code)!= nil %>
-					<% cofilecode_val = (Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1 %>
-				<% else %>
-					<% cofilecode_val = 1%>
-				<% end %>
-<!---->				
-				- <%= f.text_field :cofile_code2, :size=>6, :value => cofilecode_val %>
-				<!-- 25Feb2013-DO NOT REMOVE : subproject-<%#=count%> -->
-					
-			</span>
-		<% end %>
-		<% if @cofile.cofile_code.nil? || @cofile.cofile_code.blank?%>	
 
-		<% else %>
-				<% cofilecode_val = @cofile.cofile_code%><%= f.text_field :cofile_code, :size=>6, :value => cofilecode_val %>
-		<% end %>
+<% 1.upto(5) do |repeat_main_span|%>
+	<% if repeat_main_span == 1 %>
+		<% @span_main = "project" %>
+		<% @classification_list = Cofile::PROJECT_MGMT %>
+		<% @subclassdiv = @subclass1_div %>
+		<% @subsubclass = "subproject" %>
+	<% elsif repeat_main_span == 2 %>
+		<% @span_main = "admin"%>
+		<% @classification_list = Cofile::ADMIN_REQ %>
+		<% @subclassdiv = @subclass2_div %>
+		<% @subsubclass = "subadmin" %>
+	<% elsif repeat_main_span == 3 %>
+		<% @span_main = "finance" %>
+		<% @classification_list = Cofile::FINANCE%>
+		<% @subclassdiv = @subclass3_div %>
+		<% @subsubclass = "subfinance" %>
+	<% elsif repeat_main_span == 4 %>
+		<% @span_main = "ils_req" %>
+		<% @classification_list = Cofile::ILS_REQ %>
+		<% @subclassdiv = @subclass4_div %>
+		<% @subsubclass = "subilsreq" %>
+	<% elsif repeat_main_span == 5 %>
+		<% @span_main = "quality_assurance" %>
+		<% @classification_list = Cofile::QUALITY_ASSURANCE %>
+		<% @subclassdiv = @subclass5_div %>
+		<% @subsubclass = "subqassurance" %>
+	<% end %>	
+		<SPAN class="<%=@span_main%>", style="display: <%=@subclassdiv%>;">
+			<% if repeat_main_span == 1 %>
+				<% if (@cofile.classification.to_s  =~ /1(.*)/ ) %>
+					<%= f.select :sub_class, @classification_list, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>
+					<%= f.select :sub_class, @classification_list, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 2 %>
+				<% if (@cofile.classification.to_s  =~ /2(.*)/ ) %>
+					<%= f.select :sub_class2, Cofile::ADMIN_REQ, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>
+					<%= f.select :sub_class2, Cofile::ADMIN_REQ, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 3 %>
+				<% if (@cofile.classification.to_s  =~ /3(.*)/ ) %>
+					<%= f.select :sub_class3, Cofile::FINANCE, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>
+					<%= f.select :sub_class3, Cofile::FINANCE, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 4 %>
+				<% if (@cofile.classification.to_s  =~ /4(.*)/ ) %>
+					<%= f.select :sub_class4, Cofile::ILS_REQ, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>	
+					<%= f.select :sub_class4, Cofile::ILS_REQ, :prompt => "Please select" %>
+				<% end %>
+			<% elsif repeat_main_span == 5 %>
+				<% if (@cofile.classification.to_s  =~ /5(.*)/ ) %>
+					<%= f.select :sub_class5, Cofile::QUALITY_ASSURANCE, :selected=>@cofile.classification.to_i, :include_blank => true %>
+				<% else %>	
+					<%= f.select :sub_class5, Cofile::QUALITY_ASSURANCE, :prompt => "Please select" %>
+				<% end %>
+			<% end %>
+
+			
+			<!--moved into parent span-->
+			<% aa = []%>
+			<% @classification_list.each do |l, k| %>
+				<% aa << k%>
+			<% end %>			
+			<% 1.upto(aa.count) do |count|%>
+				<SPAN class="<%=@subsubclass%><%=count%>", style="display: none;">
+					<% counter = count-1%>
+					<% classnum = aa[counter] %>
+
+					<% if Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code)!= nil %>		
+						<% cofilecode_val = (Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1 %>				
+					<% else %>
+						<% cofilecode_val = 1%>
+					<% end %>
+
+					- <%= f.text_field :cofile_code2, :size=>6, :value => cofilecode_val %>
+					<!--Do not remove: although user change 'main_class' & 'sub_class' multiple times, but as long as their final selection (of CLASSIFICATION) is SAME as 'classification' 
+					value that was saved in the DB, model:cofile(line 269-274 -> this condition : if classification_db != sub_class_val.to_s) will make sure 'classification' &
+					'cofile_code' REMAINS UNCHANGED--> 
+					<!-- 25Feb2013-DO NOT REMOVE : subproject-<%#=count%> -->
+
+				</span>
+			<% end %>
+
+			
+			<!--moved into parent span-->
+		</span>
+<% end %>	<!--end for : 1.upto(5) do |repeat_main_span| -->	
+		
 		<%#---------------------------------PROJECT---------------------------------------%>
-		<%#---------------------------------ADMIN---------------------------------------%>
-		<SPAN class="admin", style="display: <%=@subclass2_div%>;">
-			<% if (@cofile.classification.to_s  =~ /2(.*)/ ) %>
-				<%= f.select :sub_class2, Cofile::ADMIN_REQ, :selected=>@cofile.classification.to_i, :include_blank => true %>
-			<% else %>
-				<%= f.select :sub_class2, Cofile::ADMIN_REQ, :prompt => "Please select" %>
-			<% end %>
-		</span>
-		
-		<% bb = []%>
-		<% Cofile::ADMIN_REQ.each do |l, k| %>
-			<% bb << k%>
-		<% end %>
-		<% 1.upto(20) do |count|%>
-			<SPAN class="subadmin<%=count%>", style="display: none;">
-				<% counter = count-1%>
-				<% classnum = bb[counter] %>
-				<% if Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code)!= nil %>
-					<% cofilecode_val = (Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1 %>
-				<% else %>
-					<% cofilecode_val = 1%>
-				<% end %>	
-				- <%= f.text_field :cofile_code2, :size=>6, :value => cofilecode_val %>
-				<!--25Feb2013-DO NOT REMOVE : subadmin-<%#=count%> -->
-			</span>
-		<% end %>
-		<%#---------------------------------ADMIN---------------------------------------%>
-		<%#---------------------------------FINANCE-------------------------------------%>
-		<SPAN class="finance", style="display: <%=@subclass3_div%>;">
-			<%#= f.select :sub_class3, Cofile::FINANCE, :prompt => "Please select" %>
-			<% if (@cofile.classification.to_s  =~ /3(.*)/ ) %>
-				<%= f.select :sub_class3, Cofile::FINANCE, :selected=>@cofile.classification.to_i, :include_blank => true %>
-			<% else %>
-				<%= f.select :sub_class3, Cofile::FINANCE, :prompt => "Please select" %>
-			<% end %>
-		</span>
-		
-		<% cc = []%>
-		<% Cofile::FINANCE.each do |l, k| %>
-			<% cc << k%>
-		<% end %>
-		<% 1.upto(3) do |count|%>
-			<SPAN class="subfinance<%=count%>", style="display: none;">
-				<% counter = count-1%>
-				<% classnum = cc[counter] %>
-				<% if Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code)!= nil %>
-					<% cofilecode_val = (Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1 %>
-				<% else %>
-					<% cofilecode_val = 1%>
-				<% end %>	
-				- <%= f.text_field :cofile_code2, :size=>6, :value => cofilecode_val %>
-				<!--25Feb2013-DO NOT REMOVE :subfinance-<%#=count%> -->
-			</span>
-		<% end %>
-		<%#---------------------------------FINANCE-------------------------------------%>
-		<%#------------------------------ILS REQUIREMENT--------------------------------%>
-		<SPAN class="ils_req", style="display: <%=@subclass4_div%>;">
-			<% if (@cofile.classification.to_s  =~ /4(.*)/ ) %>
-				<%= f.select :sub_class4, Cofile::ILS_REQ, :selected=>@cofile.classification.to_i, :include_blank => true %>
-			<% else %>	
-				<%= f.select :sub_class4, Cofile::ILS_REQ, :prompt => "Please select" %>
-			<% end %>
-		</span>
-		<% dd = []%>
-		<% Cofile::ILS_REQ.each do |l, k| %>
-			<% dd << k%>
-		<% end %>
-		<% 1.upto(25) do |count|%>
-			<SPAN class="subilsreq<%=count%>", style="display: none;">
-				<% counter = count-1%>
-				<% classnum = dd[counter] %>
-				<% if Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code)!= nil %>
-					<% cofilecode_val = (Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1 %>
-				<% else %>
-					<% cofilecode_val = 1%>
-				<% end %>	
-				- <%= f.text_field :cofile_code2, :size=>6, :value => cofilecode_val %>
-				<!--25Feb2013-DO NOT REMOVE :subilsreq-<%#=count%> -->
-			</span>
-		<% end %>
-		<%#------------------------------ILS REQUIREMENT--------------------------------%>
-		<%#-----------------------------QUALITY ASSURANCE-------------------------------%>
-		<SPAN class="quality_assurance", style="display: <%=@subclass5_div%>;">
-			<% if (@cofile.classification.to_s  =~ /5(.*)/ ) %>
-				<%= f.select :sub_class5, Cofile::QUALITY_ASSURANCE, :selected=>@cofile.classification.to_i, :include_blank => true %>
-			<% else %>	
-				<%= f.select :sub_class5, Cofile::QUALITY_ASSURANCE, :prompt => "Please select" %>
-			<% end %>
-		</span>
-		<% ee = []%>
-		<% Cofile::QUALITY_ASSURANCE.each do |l, k| %>
-			<% ee << k%>
-		<% end %>
-		<% 1.upto(8) do |count|%>
-			<SPAN class="subqassurance<%=count%>", style="display: none;">
-				<% counter = count-1%>
-				<% classnum = ee[counter] %>
-				<% if Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code)!= nil %>
-					<% cofilecode_val = (Cofile.find(:last, :conditions=>['classification=?',classnum],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1 %>
-				<% else %>
-					<% cofilecode_val = 1%>
-				<% end %>	
-				- <%= f.text_field :cofile_code2, :size=>6, :value => cofilecode_val %>
-				<!--25Feb2013-DO NOT REMOVE : subqassurance-<%#=count%> -->
-			</span>
-		<% end %>
-		<%#-----------------------------QUALITY ASSURANCE-------------------------------%>
+
 		<SPAN class="risk_management", style="display: none;">
 			<!--25Feb2013-DO NOT REMOVE :Risk Management--> <%#= f.text_field :sub_class6, :value=> 6 %>
 		</span>

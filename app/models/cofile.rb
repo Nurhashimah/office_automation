@@ -92,7 +92,7 @@ class Cofile < ActiveRecord::Base
 	    'white'
     end  
   end
-  
+
   
   #coded list for locations - 15Feb2013
   LOCATION = [
@@ -227,6 +227,14 @@ class Cofile < ActiveRecord::Base
     ["0550	Issue Management / Help Desk",    550]
  ]
  
+ #26Feb2013
+ #def self.take_this_instead
+  # if sub_class == classification
+ #end
+ 
+ #26Feb2013
+ 
+ 
   #22Feb2013-standard numbering
   def save_my_vars
 	  #25Feb2013-copy value of subclassX to variable sub_class_val----
@@ -248,13 +256,23 @@ class Cofile < ActiveRecord::Base
 		  sub_class_val = main_class 		#sub_classX not exist
 	  end
 	  #25Feb2013-copy value of subclassX to variable sub_class_val----
-	  if cofile_code == nil	#24Feb2013-if NEW file (cofile_code not yet saved in db)- assign values
+	  
+	  if cofile_code == nil	 #===========24Feb2013-if NEW file (cofile_code not yet saved in db)- assign values
 		  unless sub_class_val == nil 
 			  self.classification = sub_class_val.to_i		#23Feb2013-changed from sub_class to sub_class_val
 			  self.cofile_code = (suggested_serial_no(sub_class_val)).to_s
 		  end
-	  else	#25Feb2013-if EDIT file - do nothing!
-		  #cofile_code in db remains unchanged
+	  else	#===========25Feb2013-if EDIT file
+	    
+	    classification_db = Cofile.find(id).classification.to_s   #read classification in db
+	    
+		  if classification_db != sub_class_val.to_s ##*********26Feb2013 - if previously saved classification data differ from currently selected by user, make changes to db 
+		     self.classification = sub_class_val.to_i		#23Feb2013-changed from sub_class to sub_class_val
+  			 self.cofile_code = (suggested_serial_no(sub_class_val)).to_s
+  		else ##26Feb2013********* - else don't make any changes to db 
+  		  #ignores - do nothing - cofile_code & classification in db remains unchanged
+		  end 
+		  
 	  end
   end
   #22Feb2013-standard numbering
@@ -270,7 +288,7 @@ class Cofile < ActiveRecord::Base
 	#line below : checking for any record with same classification value-if exist increment suggested serial no by 1 if not exist SET suggested serial no to 1
 	if cc_a.include? self.classification.to_i	
 		#'0'+self.classification.to_s+'-'+((Cofile.find(:last, :conditions=>['classification=?',sub_class2.to_s],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1).to_s
-		'0'+self.classification.to_s+'-'+((Cofile.find(:last, :conditions=>['classification=?',subclassval.to_s],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1).to_s
+		'0'+self.classification.to_s+'-'+((Cofile.find(:last, :conditions=>['classification=?',subclassval.to_i],:select=>:cofile_code).cofile_code).split("-")[1].to_i+1).to_s #RECHECK subclassval.to_i vs subclassval..to_s
 	else
 		'0'+self.classification.to_s+'-'+'1'
 	end
