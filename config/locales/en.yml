@@ -702,7 +702,7 @@ en:
     title: Title
     letterdt: Letter Date
     letterxdt: Received Date
-    from: From
+    from: "From / To"
     stafffiled_id: Filled By
     closed: Closed
     doc_details: Document Details
